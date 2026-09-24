@@ -1,0 +1,935 @@
+/* =========================================================
+   PERAMALAN PAGE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+
+  color: #263b59;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.peramalan-layout {
+  display: flex;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+.peramalan-page {
+  flex: 1;
+
+  width: calc(100% - 312px);
+
+  min-width: 0;
+
+  min-height: 100vh;
+
+  padding: 40px 38px;
+
+  background: #f5f7fb;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.peramalan-header {
+  display: flex !important;
+
+  flex-direction: row !important;
+
+  align-items: center !important;
+
+  justify-content: space-between !important;
+
+  width: 100%;
+
+  min-height: 70px;
+
+  margin-bottom: 35px;
+}
+
+.peramalan-title {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.peramalan-title h3 {
+  margin: 0;
+
+  color: #14213d;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+.peramalan-title p {
+  margin: 6px 0 0;
+
+  color: #8fa2c0;
+
+  font-size: 14px;
+
+  font-weight: 400;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   USER DROPDOWN
+========================================================= */
+
+.user-dropdown {
+  position: relative;
+
+  display: block;
+
+  flex: 0 0 auto;
+
+  width: 176px;
+
+  margin-left: 30px;
+}
+
+.user-dropdown-btn {
+  display: flex !important;
+
+  flex-direction: row !important;
+
+  align-items: center !important;
+
+  justify-content: flex-start !important;
+
+  width: 176px;
+
+  height: 70px;
+
+  padding: 8px 14px 8px 10px;
+
+  margin: 0;
+
+  gap: 10px;
+
+  border: 0;
+
+  border-radius: 38px;
+
+  background: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+  font-family: "Poppins", sans-serif;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.user-dropdown-btn:hover {
+  background: #ffffff;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.user-dropdown-btn:focus {
+  outline: none;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   AVATAR
+========================================================= */
+
+.peramalan-page .avatar-circle {
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: center !important;
+
+  flex: 0 0 50px;
+
+  width: 50px;
+
+  min-width: 50px;
+
+  max-width: 50px;
+
+  height: 50px;
+
+  min-height: 50px;
+
+  max-height: 50px;
+
+  padding: 0;
+
+  margin: 0;
+
+  border-radius: 50%;
+
+  background: #5146e5;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   USER INFORMATION
+========================================================= */
+
+.peramalan-page .user-info {
+  display: block;
+
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  margin: 0;
+
+  padding: 0;
+
+  text-align: left;
+}
+
+.peramalan-page .user-info .name {
+  display: block;
+
+  overflow: hidden;
+
+  margin: 0;
+
+  padding: 0;
+
+  color: #111827;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  line-height: 20px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.peramalan-page .user-info .role {
+  display: block;
+
+  margin: 1px 0 0;
+
+  padding: 0;
+
+  color: #9ca3af;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  line-height: 18px;
+}
+
+/* =========================================================
+   CHEVRON
+========================================================= */
+
+.peramalan-page .user-dropdown-btn > i {
+  display: block;
+
+  flex: 0 0 auto;
+
+  width: 12px;
+
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1;
+}
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.peramalan-page .user-dropdown .dropdown-menu {
+  min-width: 190px;
+
+  margin-top: 8px !important;
+
+  padding: 7px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.peramalan-page .user-dropdown .dropdown-item-text {
+  padding: 8px 10px;
+
+  color: #263b59;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+.peramalan-page .user-dropdown .dropdown-item {
+  padding: 9px 10px;
+
+  border-radius: 8px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+}
+
+.peramalan-page .user-dropdown .dropdown-item:hover {
+  background: #f5f3ff;
+}
+
+.peramalan-page .user-dropdown .dropdown-divider {
+  margin: 5px 0;
+
+  border-color: #eeeeee;
+}
+
+/* =========================================================
+   ALERT
+========================================================= */
+
+.peramalan-alert {
+  margin-bottom: 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.peramalan-card {
+  width: 100%;
+
+  margin: 0 0 22px;
+
+  padding: 26px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+}
+
+.peramalan-card-header {
+  margin-bottom: 25px;
+}
+
+.peramalan-card-header h4 {
+  margin: 0;
+
+  color: #263b59;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.peramalan-card-header p {
+  margin: 6px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FORM LABEL
+========================================================= */
+
+.peramalan-label {
+  display: block;
+
+  margin: 0 0 8px;
+
+  color: #374151;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.peramalan-input-wrapper {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+.peramalan-prefix {
+  position: absolute;
+
+  left: 15px;
+
+  z-index: 2;
+
+  color: #8fa2c0;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  pointer-events: none;
+}
+
+.peramalan-input-icon {
+  position: absolute;
+
+  left: 15px;
+
+  z-index: 2;
+
+  color: #8fa2c0;
+
+  font-size: 13px;
+
+  pointer-events: none;
+}
+
+.peramalan-input {
+  width: 100%;
+
+  height: 48px;
+
+  padding: 0 15px 0 42px;
+
+  border: 1px solid #d9e2ef;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.peramalan-input:focus {
+  border-color: #5146e5;
+
+  box-shadow: 0 0 0 3px rgba(81, 70, 229, 0.08);
+}
+
+.peramalan-help {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   METHOD
+========================================================= */
+
+.peramalan-method {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 25px;
+
+  padding: 15px;
+
+  border-radius: 11px;
+
+  background: #f7f7ff;
+}
+
+.peramalan-method-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 0 0 42px;
+
+  width: 42px;
+
+  height: 42px;
+
+  border-radius: 10px;
+
+  background: #5146e5;
+
+  color: #ffffff;
+
+  font-size: 15px;
+}
+
+.peramalan-method-title {
+  color: #8fa2c0;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+.peramalan-method-text {
+  margin-top: 2px;
+
+  color: #263b59;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+.peramalan-method small {
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.peramalan-form-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  margin-top: 22px;
+}
+
+.peramalan-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width: 125px;
+
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #5146e5;
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.peramalan-btn:hover {
+  background: #453bd0;
+
+  color: #ffffff;
+}
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.peramalan-summary {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  width: 100%;
+
+  margin-bottom: 22px;
+}
+
+.peramalan-summary-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  min-width: 0;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+}
+
+.summary-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex: 0 0 43px;
+
+  width: 43px;
+
+  height: 43px;
+
+  border-radius: 10px;
+
+  background: #eef0ff;
+
+  color: #5146e5;
+
+  font-size: 15px;
+}
+
+.peramalan-summary-card span {
+  display: block;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+}
+
+.peramalan-summary-card strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #263b59;
+
+  font-size: 15px;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   COEFFICIENT
+========================================================= */
+
+.peramalan-coefficient {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  width: 100%;
+
+  margin-bottom: 22px;
+
+  padding: 18px 22px;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.035);
+}
+
+.coefficient-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #263b59;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.coefficient-title i {
+  color: #5146e5;
+}
+
+.coefficient-items {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+.coefficient-items > div {
+  min-width: 55px;
+
+  text-align: center;
+}
+
+.coefficient-items span {
+  display: block;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+}
+
+.coefficient-items strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #263b59;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   GRAFIK
+========================================================= */
+
+.grafik-card {
+  margin-bottom: 0;
+}
+
+.chart-container {
+  position: relative;
+
+  width: 100%;
+
+  height: 350px;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+  .peramalan-page {
+    padding: 35px 25px;
+  }
+
+  .peramalan-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .peramalan-coefficient {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .coefficient-items {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .peramalan-page {
+    width: 100%;
+
+    padding: 25px 20px;
+  }
+
+  .peramalan-header {
+    flex-direction: row !important;
+
+    align-items: center !important;
+
+    margin-bottom: 25px;
+  }
+
+  .peramalan-title h3 {
+    font-size: 24px;
+  }
+
+  .peramalan-title p {
+    font-size: 12px;
+  }
+
+  .user-dropdown {
+    width: 165px;
+
+    margin-left: 15px;
+  }
+
+  .user-dropdown-btn {
+    width: 165px;
+
+    height: 62px;
+  }
+
+  .peramalan-page .avatar-circle {
+    flex-basis: 44px;
+
+    width: 44px;
+
+    min-width: 44px;
+
+    height: 44px;
+
+    min-height: 44px;
+  }
+
+  .peramalan-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .coefficient-items {
+    flex-wrap: wrap;
+
+    justify-content: flex-start;
+
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .peramalan-page {
+    padding: 20px 15px;
+  }
+
+  .peramalan-header {
+    align-items: flex-start !important;
+  }
+
+  .peramalan-title h3 {
+    font-size: 21px;
+  }
+
+  .peramalan-title p {
+    font-size: 10px;
+  }
+
+  .user-dropdown {
+    width: 150px;
+
+    margin-left: 10px;
+  }
+
+  .user-dropdown-btn {
+    width: 150px;
+
+    height: 58px;
+
+    padding: 6px 10px 6px 7px;
+
+    gap: 7px;
+  }
+
+  .peramalan-page .avatar-circle {
+    flex-basis: 42px;
+
+    width: 42px;
+
+    min-width: 42px;
+
+    height: 42px;
+
+    min-height: 42px;
+  }
+
+  .peramalan-page .user-info .name {
+    font-size: 13px;
+  }
+
+  .peramalan-page .user-info .role {
+    font-size: 11px;
+  }
+
+  .peramalan-card {
+    padding: 18px;
+  }
+
+  .chart-container {
+    height: 280px;
+  }
+}
